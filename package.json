@@ -1,0 +1,29 @@
+{
+  "name": "umd-dining-hall-menu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js help",
+    "menu": "node index.js menu",
+    "recommend": "node index.js recommend",
+    "menu:y": "node index.js menu 19",
+    "menu:south": "node index.js menu 16",
+    "menu:251": "node index.js menu 38",
+    "recommend:y": "node index.js recommend 19",
+    "recommend:south": "node index.js recommend 16",
+    "recommend:251": "node index.js recommend 38",
+    "update-params": "node index.js update-params",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A simple Node.js module to fetch the UMD dining hall menu",
+  "dependencies": {
+    "@google/generative-ai": "^0.1.3",
+    "dotenv": "^16.3.1",
+    "jsdom": "^26.0.0",
+    "node-fetch": "^3.3.2"
+  }
+}
