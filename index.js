@@ -189,14 +189,6 @@ if (process.argv[1] === new URL(import.meta.url).pathname) {
         });
       break;
       
-    case "update-params":
-      updatePersonalParameters()
-        .catch(err => {
-          console.error("\nError:", err.message);
-          process.exit(1);
-        });
-      break;
-      
     case "help":
     default:
       console.log(`
@@ -204,7 +196,6 @@ Usage:
   npm start                      - Show help information
   npm start menu [locationNum]   - Fetch dining hall menu (default location: 19)
   npm start recommend [locationNum] - Get meal recommendations based on menu
-  npm start update-params        - Update personal fitness parameters
   
 Common Location Numbers:
   19 - Yahentamitsi Dining Hall

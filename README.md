@@ -42,9 +42,6 @@ npm run recommend        # Default (Yahentamitsi)
 npm run recommend:y      # Yahentamitsi
 npm run recommend:south  # South Campus
 npm run recommend:251    # 251 North
-
-# Update your personal fitness parameters
-npm run update-params
 ```
 
 ### Sample Output
