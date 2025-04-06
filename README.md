@@ -1,25 +1,15 @@
 # UMD Dining Hall Menu
 
-A simple Node.js module to fetch the University of Maryland dining hall menu and provide AI-powered meal recommendations based on your fitness goals.
+A simple Node.js module to fetch the UMD dining hall menu and provide AI meal recommendations based on your fitness goals.
 
 ## Features
 
 - **Real-time Menu Data**: Fetches and parses current menus from UMD dining halls
-- **AI-Powered Recommendations**: Uses Google's Gemini AI to suggest optimal meal choices
+- **AI Recommendations**: Uses Google's Gemini AI to suggest optimal meal choices
 - **Personalized Nutrition**: Customizable to your specific fitness goals, calorie targets, and dietary preferences
-- **Multiple Dining Halls**: Support for all major UMD dining facilities
+- **Multiple Dining Halls**: Support for all UMD dining halls
 - **Easy CLI Interface**: Simple commands for fetching menus and generating recommendations
 
-## Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/umd-dining-hall-menu.git
-cd umd-dining-hall-menu
-
-# Install dependencies
-npm install
-```
 
 ## Setup
 
@@ -30,25 +20,6 @@ To use the meal recommendation feature, you'll need a Gemini API key:
 1. Get an API key from [Google AI Studio](https://ai.google.dev/)
 2. Create a `.env` file in the project root
 3. Add your API key to the `.env` file
-
-### Sample `.env` File
-
-```
-# Gemini API Key
-GEMINI_API_KEY=your_api_key_here
-
-# Personal Fitness Parameters
-USER_WEIGHT=165-170
-USER_CALORIE_TARGET=1800-2000
-USER_PROTEIN_TARGET=130
-USER_BREAKFAST_CALORIES=600
-USER_BREAKFAST_PROTEIN=23
-USER_TRAINING_FREQUENCY=4-5
-USER_FITNESS_GOALS=Lose fat,Maintain muscle,Minimize refined carbs and excess fat
-
-# Breakfast Details
-USER_BREAKFAST_ITEMS=Jimmy Dean breakfast sandwich (approx. 350 calories 14g protein),1 Clif Bar (250 calories 9g protein)
-```
 
 ## Usage
 
@@ -90,25 +61,6 @@ When you run `npm run recommend`, you'll receive personalized meal recommendatio
   Balanced meal with lean protein, complex carbs, and vegetables to hit remaining protein targets.
 ```
 
-### Advanced Usage
-
-#### Using as a Module in Your Project
-
-```javascript
-import { getDiningHallMenu, getMealRecommendations } from './umd-dining-hall-menu/index.js';
-
-// Get dining hall menu
-getDiningHallMenu('19') // Yahentamitsi
-  .then(menu => console.log(menu))
-  .catch(error => console.error(error));
-
-// Get menu and AI recommendations
-getDiningHallMenu('16') // South Campus
-  .then(menu => getMealRecommendations(menu))
-  .then(recommendations => console.log(recommendations))
-  .catch(error => console.error(error));
-```
-
 ## Dining Hall Locations
 
 | Location Number | Dining Hall Name         |
@@ -119,7 +71,24 @@ getDiningHallMenu('16') // South Campus
 
 ## Environment Variables
 
-The following environment variables can be set in your `.env` file to customize the meal recommendations:
+### Sample `.env` File
+
+```
+# Gemini API Key
+GEMINI_API_KEY=your_api_key_here
+
+# Personal Fitness Parameters
+USER_WEIGHT=165-170
+USER_CALORIE_TARGET=1800-2000
+USER_PROTEIN_TARGET=130
+USER_BREAKFAST_CALORIES=600
+USER_BREAKFAST_PROTEIN=23
+USER_TRAINING_FREQUENCY=4-5
+USER_FITNESS_GOALS=Lose fat,Maintain muscle,Minimize refined carbs and excess fat
+
+# Breakfast Details
+USER_BREAKFAST_ITEMS=Jimmy Dean breakfast sandwich (approx. 350 calories 14g protein),1 Clif Bar (250 calories 9g protein)
+```
 
 | Environment Variable    | Description                                    | Default Value                                      |
 |-------------------------|------------------------------------------------|---------------------------------------------------|
@@ -131,11 +100,3 @@ The following environment variables can be set in your `.env` file to customize 
 | USER_TRAINING_FREQUENCY | Weekly resistance training frequency           | "4-5"                                              |
 | USER_FITNESS_GOALS      | Comma-separated list of fitness goals          | "Lose fat,Maintain muscle,Minimize refined carbs"  |
 | USER_BREAKFAST_ITEMS    | Comma-separated list of breakfast items eaten  | "Jimmy Dean breakfast sandwich,1 Clif Bar"         |
-
-## License
-
-ISC
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
